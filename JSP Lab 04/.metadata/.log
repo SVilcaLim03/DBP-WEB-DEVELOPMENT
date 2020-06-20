@@ -1,0 +1,1384 @@
+!SESSION 2020-06-05 18:54:46.600 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_MX
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.objectteams.otdt 4 0 2020-06-05 18:55:22.031
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt [574]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.apt 4 0 2020-06-05 18:55:22.042
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.apt [575]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.compiler.adaptor 4 0 2020-06-05 18:55:22.049
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.compiler.adaptor [576]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.debug 4 0 2020-06-05 18:55:22.056
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.debug [577]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.debug.adaptor 4 0 2020-06-05 18:55:22.063
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.debug.adaptor [578]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug.ui; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.debug.ui [579]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otdt [574]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+                     org.eclipse.objectteams.otequinox [587]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                            org.eclipse.objectteams.otredyn [589]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.ui [585]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.debug.ui 4 0 2020-06-05 18:55:22.069
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.debug.ui [579]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.debug [577]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.jdt.ui 4 0 2020-06-05 18:55:22.076
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.jdt.ui [581]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otdt [574]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+                     org.eclipse.objectteams.otequinox [587]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                            org.eclipse.objectteams.otredyn [589]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.pde.ui 4 0 2020-06-05 18:55:22.082
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.pde.ui [582]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.refactoring 4 0 2020-06-05 18:55:22.088
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.refactoring [583]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.jdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.jdt.ui; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt.jdt.ui [581]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.ui [585]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+                     org.eclipse.objectteams.otdt.debug [577]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.samples 4 0 2020-06-05 18:55:22.095
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.samples [584]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui.help; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui.help; bundle-version="2.5.0.201606070956"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui.help [586]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.ui [585]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+                     org.eclipse.objectteams.otdt [574]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+                     org.eclipse.objectteams.otdt.debug [577]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.ui 4 0 2020-06-05 18:55:22.101
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.ui [585]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.debug [577]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.ui.help 4 0 2020-06-05 18:55:22.107
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.ui.help [586]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otdt [574]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; osgi.identity="org.eclipse.objectteams.otredyn"; type="osgi.bundle"; version:Version="1.4.0.202003100937"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; osgi.identity="org.objectweb.asm.util"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; osgi.identity="org.objectweb.asm"; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2020-06-05 18:56:44.290
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-06-05 18:56:44.290
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c07023,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13ae87a6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-06-05 18:56:56.517
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\MSI'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2020-06-05 19:03:23.490 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_MX
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.objectteams.otequinox 4 0 2020-06-05 19:03:26.581
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otequinox [587]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+       org.eclipse.objectteams.otredyn [589]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1780)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.SystemModule.startWorker(SystemModule.java:269)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:603)
+	at org.eclipse.osgi.container.Module.start(Module.java:467)
+	at org.eclipse.osgi.container.SystemModule.start(SystemModule.java:193)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:439)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.start(EquinoxBundle.java:458)
+	at org.eclipse.osgi.launch.Equinox.start(Equinox.java:120)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.startup(EclipseStarter.java:338)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:251)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+
+!ENTRY org.eclipse.objectteams.otdt 4 0 2020-06-05 19:03:26.722
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt [574]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.apt 4 0 2020-06-05 19:03:26.731
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.apt [575]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.compiler.adaptor 4 0 2020-06-05 19:03:26.742
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.compiler.adaptor [576]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.debug 4 0 2020-06-05 19:03:26.750
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.debug [577]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.debug.adaptor 4 0 2020-06-05 19:03:26.766
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.debug.adaptor [578]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug.ui; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.debug.ui [579]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.ui [585]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+                     org.eclipse.objectteams.otdt [574]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+                            org.eclipse.objectteams.otequinox [587]
+                              Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                                -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                                   org.eclipse.objectteams.otredyn [589]
+                                     No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+                     org.eclipse.objectteams.otdt.debug [577]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.debug.ui 4 0 2020-06-05 19:03:26.777
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.debug.ui [579]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otdt [574]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+                     org.eclipse.objectteams.otequinox [587]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                            org.eclipse.objectteams.otredyn [589]
+                              No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.jdt.ui 4 0 2020-06-05 19:03:26.795
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.jdt.ui [581]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.pde.ui 4 0 2020-06-05 19:03:26.814
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.pde.ui [582]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otdt [574]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.refactoring 4 0 2020-06-05 19:03:26.826
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.refactoring [583]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.jdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.jdt.ui; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt.jdt.ui [581]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.ui [585]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+                     org.eclipse.objectteams.otdt.debug [577]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.samples 4 0 2020-06-05 19:03:26.851
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.samples [584]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui.help; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui.help; bundle-version="2.5.0.201606070956"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui.help [586]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.ui [585]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+                     org.eclipse.objectteams.otdt [574]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+                     org.eclipse.objectteams.otdt.debug [577]
+                       Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                         -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.ui 4 0 2020-06-05 19:03:26.863
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.ui [585]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otdt [574]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otequinox [587]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+                     org.eclipse.objectteams.otredyn [589]
+                       No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.debug [577]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.objectteams.otdt.ui.help 4 0 2020-06-05 19:03:26.879
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.objectteams.otdt.ui.help [586]
+  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+       org.eclipse.objectteams.otequinox [587]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otredyn; bundle-version="[1.4.0,2.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otredyn; bundle-version="1.4.0.202003100937"
+              org.eclipse.objectteams.otredyn [589]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.ui; bundle-version="[2.5.0,3.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.ui; bundle-version="2.7.4.201906101736"; singleton:="true"
+       org.eclipse.objectteams.otdt.ui [585]
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+              org.eclipse.objectteams.otdt [574]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otequinox; bundle-version="[2.3.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otequinox; bundle-version="2.8.0.202003100937"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt.debug; bundle-version="[2.0.0,3.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.objectteams.otdt.debug; bundle-version="2.7.3.201906101736"; singleton:="true"
+              org.eclipse.objectteams.otdt.debug [577]
+                Unresolved requirement: Require-Bundle: org.eclipse.objectteams.otdt; bundle-version="[2.0.0,3.0.0)"
+                  -> Bundle-SymbolicName: org.eclipse.objectteams.otdt; bundle-version="2.8.0.202003100937"; singleton:="true"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm)(&(bundle-version>=7.1.0)(!(bundle-version>=8.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.2.0.v20191010-1910"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.eclipse.objectteams.otredyn [osgi.identity; type="osgi.bundle"; version:Version="1.4.0.202003100937"; osgi.identity="org.eclipse.objectteams.otredyn"]
+    require: (&(osgi.wiring.bundle=org.objectweb.asm.util)(&(bundle-version>=7.1.0)(!(bundle-version>=8.9.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="7.1.0.v20190412-2143"; osgi.wiring.bundle="org.objectweb.asm.util"
+  org.objectweb.asm.util [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm.util"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=7.1.0)(!(version>=7.2.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="7.1.0.v20190412-2143"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:462)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1844)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1837)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1778)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1742)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1664)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2020-06-05 19:03:59.598
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-06-05 19:03:59.598
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5c552f08,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4fd00e10,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-06-05 19:04:04.119
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\MSI'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
